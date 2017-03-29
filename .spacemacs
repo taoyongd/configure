@@ -283,6 +283,9 @@ you should place your code here."
    '(company-tooltip-common-selection
      ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
   (global-set-key (kbd "M-/") 'spacemacs/comment-or-uncomment-lines)
+  (evil-leader/set-key
+    "tt" 'helm-gtags-dwim
+    )
   (setq magit-repository-directories '("~/dev/"))
   )
 
