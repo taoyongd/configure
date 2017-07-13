@@ -48,6 +48,7 @@ values."
      emacs-lisp
      git
      csharp
+     go
      markdown
      org
      shell-scripts

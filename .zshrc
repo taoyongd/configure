@@ -118,22 +118,28 @@ alias pycharm="pycharm.sh"
 alias dfimage="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock dduvnjak/dockerfile-from-image"
 alias pb=planex-buildenv
 alias mysync='f() {set -x; src=$(basename $1); rsync -avzp --delete $src yangqi@eddie3.uk.xensource.com:/home/yangqi/dev}; f'
+alias oct=ocp-browser
 #########################################
 # Added by oh-my-vim
 export PATH=$PATH:/home/qy/.oh-my-vim/bin
 export VISUAL=vim
 export EDITOR=vim
-export GTAGSLABEL=pygments
-
-#########################################
-# Traffic generator
-#export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/opt/stc-4.44/Spirent_TestCenter_4.44/Spirent_TestCenter_Application_Linux"
 
 # OPAM configuration
 . /home/qy/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 #########################################
+# ssh agent
 echo "Launch ssh-agent"
 eval $(ssh-agent)
 ssh-add
 
+
+#########################################
+# global
+export GTAGSLABEL=pygments
+
+
+#########################################
+# golang
+export GOROOT="${HOME}/software/go"
