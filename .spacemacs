@@ -48,7 +48,7 @@ values."
      emacs-lisp
      git
      csharp
-     go
+     (go :variables go-tab-width 4)
      markdown
      org
      shell-scripts
