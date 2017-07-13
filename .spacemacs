@@ -347,7 +347,6 @@ you should place your code here."
   (setq magit-repository-directories '("~/dev/"))
   (setq-default c-basic-offset 4)
   (setq-default indent-tabs-mode t)
-  (setq-default default-tab-width 4)
   (custom-set-variables
    ;; custom-set-variables was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
