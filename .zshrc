@@ -143,3 +143,4 @@ export GTAGSLABEL=pygments
 #########################################
 # golang
 export GOROOT="${HOME}/software/go"
+export PATH="${PATH}:${GOROOT}/bin"
