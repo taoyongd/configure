@@ -60,12 +60,12 @@ values."
      version-control
      python
      octave
-     c-c++
      gtags
      docker
      ocaml
      imenu-list
-     (c-c++ :variables c-c++-enable-clang-support t)
+     (c-c++ :variables
+            c-c++-enable-clang-support t)
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      )
@@ -315,6 +315,9 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq-default c-default-style "bsd")
+  (setq-default c-basic-offset 4)
+  (setq-default indent-tabs-mode t)
   )
 
 (defun dotspacemacs/user-config ()
@@ -330,6 +333,14 @@ you should place your code here."
   (global-set-key [C-M-tab] 'clang-format-region)
   ;; Bind clang-format-buffer to tab on the c++-mode only:
   (add-hook 'c++-mode-hook 'clang-format-bindings)
+  (add-hook 'c-mode-hook
+            (lambda ()
+              ;; (setq-default indent-tabs-mode t
+              ;;               tab-width 4
+              ;;               c-basic-offset 4)
+              (setq indent-tabs-mode t
+                    tab-width 4
+                    c-basic-offset 4)))
   (defun clang-format-bindings ()
     (define-key c++-mode-map [tab] 'clang-format-buffer))
   (turn-on-fci-mode)
@@ -345,8 +356,6 @@ you should place your code here."
   ;; workaround for #3429
   (evil-leader/set-key "/" 'spacemacs/helm-project-do-ag-region-or-symbol)
   (setq magit-repository-directories '("~/dev/"))
-  (setq-default c-basic-offset 4)
-  (setq-default indent-tabs-mode t)
   (custom-set-variables
    ;; custom-set-variables was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
