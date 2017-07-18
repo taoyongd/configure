@@ -317,7 +317,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq-default c-default-style "bsd")
   (setq-default c-basic-offset 4)
-  (setq-default indent-tabs-mode t)
+  (setq tuareg-default-indent 2)
+  (setq-default indent-tabs-mode nil)
   )
 
 (defun dotspacemacs/user-config ()
@@ -335,12 +336,19 @@ you should place your code here."
   (add-hook 'c++-mode-hook 'clang-format-bindings)
   (add-hook 'c-mode-hook
             (lambda ()
+              ;; (setq-default indent-tabs-mode nil
+              ;;               tab-width 4
+              ;;               c-basic-offset 4)
+              (setq indent-tabs-mode nil
+                    tab-width 4
+                    c-basic-offset 4)))
+  ;; seems this hook doesn't work
+  (add-hook 'tuareg-mode-hook
+            (lambda ()
               ;; (setq-default indent-tabs-mode t
               ;;               tab-width 4
               ;;               c-basic-offset 4)
-              (setq indent-tabs-mode t
-                    tab-width 4
-                    c-basic-offset 4)))
+              (setq indent-tabs-mode t)))
   (defun clang-format-bindings ()
     (define-key c++-mode-map [tab] 'clang-format-buffer))
   (turn-on-fci-mode)
