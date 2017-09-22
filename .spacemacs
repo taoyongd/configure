@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     javascript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -64,6 +65,7 @@ values."
      docker
      ocaml
      imenu-list
+     yaml
      (c-c++ :variables
             c-c++-enable-clang-support t)
      (colors :variables
@@ -73,7 +75,10 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     ;;groovy
+    )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -315,10 +320,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq-default c-default-style "bsd")
-  (setq-default c-basic-offset 4)
-  (setq tuareg-default-indent 2)
-  (setq-default indent-tabs-mode nil)
+  ;; (setq-default c-default-style "linux"
+  ;;               tab-width 4
+  ;;               c-basic-offset 4)
+  ;; ;; (setq tuareg-default-indent 2)
+  ;; (setq-default indent-tabs-mode nil)
   )
 
 (defun dotspacemacs/user-config ()
@@ -332,6 +338,11 @@ you should place your code here."
   (global-company-mode)
   ;; Bind clang-format-region to C-M-tab in all modes:
   (global-set-key [C-M-tab] 'clang-format-region)
+  (setq-default c-default-style "linux"
+                tab-width 4
+                c-basic-offset 4)
+  ;; (setq tuareg-default-indent 2)
+  (setq-default indent-tabs-mode nil)
   ;; Bind clang-format-buffer to tab on the c++-mode only:
   (add-hook 'c++-mode-hook 'clang-format-bindings)
   (add-hook 'c-mode-hook
@@ -348,7 +359,7 @@ you should place your code here."
               ;; (setq-default indent-tabs-mode t
               ;;               tab-width 4
               ;;               c-basic-offset 4)
-              (setq indent-tabs-mode t)))
+              (setq indent-tabs-mode nil)))
   (defun clang-format-bindings ()
     (define-key c++-mode-map [tab] 'clang-format-buffer))
   (turn-on-fci-mode)
