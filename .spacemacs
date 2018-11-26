@@ -77,7 +77,7 @@
     ;; A list of packages that cannot be updated.
     dotspacemacs-frozen-packages '()
     ;; A list of packages that will not be installed and loaded.
-    dotspacemacs-excluded-packages '()
+    dotspacemacs-excluded-packages '(magit-gitflow)
     ;; Defines the behaviour of Spacemacs when installing packages.
     ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
     ;; `used-only' installs only explicitly used packages and uninstall any
@@ -344,7 +344,7 @@
  (evil-leader/set-key
   "tt" 'helm-gtags-dwim
  )
-    (setq magit-repository-directories '("/mnt/project/"))
+    (setq magit-repository-directories '("/home/master"))
     (setq-default c-basic-offset 4)
     (setq-default indent-tabs-mode t)
 (setq-default default-tab-width 4)
@@ -386,6 +386,22 @@
                 (setq indent-tabs-mode t)
                 (setq show-trailing-whitespace t)
                 (c-set-style "linux-tabs-only")))))
-
+;; (require 'magit-gitflow)
+;; (add-hook 'magit-mode-hook
+;; 		  'turn-on-magit-gitflow)
     ;; Do not write anything past this comment. This is where Emacs will
     ;; auto-generate custom variable definitions.;
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (org-mime yapfify xterm-color ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen utop use-package unfill tuareg toc-org spaceline smeargle shell-pop restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file omnisharp ocp-indent neotree mwim multi-term move-text mmm-mode merlin markdown-toc macrostep lorem-ipsum live-py-mode linum-relative link-hint insert-shebang indent-guide imenu-list hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md ggtags fuzzy flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav dumb-jump drupal-mode dockerfile-mode docker disaster diminish diff-hl define-word cython-mode company-statistics company-shell company-quickhelp company-c-headers company-anaconda column-enforce-mode color-identifiers-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
